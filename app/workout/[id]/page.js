@@ -8,6 +8,7 @@ import { fetchWorkout } from "@/lib/api";
 import { PLAN_LIMIT, usePlan } from "@/components/PlanProvider";
 import Spinner from "@/components/Spinner";
 import TagPills from "@/components/TagPills";
+import WorkoutImage from "@/components/WorkoutImage";
 import NotFoundView from "@/components/NotFoundView";
 
 export default function WorkoutDetailPage() {
@@ -32,6 +33,11 @@ export default function WorkoutDetailPage() {
       active = false;
     };
   }, [id]);
+
+  // Show the lift's name in the browser tab once it has loaded.
+  useEffect(() => {
+    if (workout) document.title = `${workout.name} — FitLog`;
+  }, [workout]);
 
   if (workout === undefined) return <Spinner label="Loading workout…" />;
 
@@ -71,8 +77,11 @@ export default function WorkoutDetailPage() {
 
       <div className="grid gap-10 lg:grid-cols-2">
         <div className="overflow-hidden rounded-3xl border border-line bg-raised lg:sticky lg:top-24 lg:self-start">
-          {/* eslint-disable-next-line @next/next/no-img-element */}
-          <img src={workout.image} alt={workout.name} className="h-full w-full object-cover" />
+          <WorkoutImage
+            src={workout.image}
+            alt={workout.name}
+            className="h-full w-full object-cover"
+          />
         </div>
 
         <div className="flex flex-col gap-8">
