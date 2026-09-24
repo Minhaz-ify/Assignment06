@@ -52,7 +52,7 @@ export default function Navbar() {
             </span>
           </Link>
           <Link
-            href="/my-plan"
+            href="/my-plan?tab=saved"
             aria-label={`Saved: ${saved.length} items`}
             className="flex items-center gap-2 rounded-full border border-muted/50 px-3 py-1 text-sm font-semibold text-white hover:border-accent"
           >
