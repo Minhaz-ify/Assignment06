@@ -14,7 +14,7 @@ A dark, no-nonsense gym companion: pick a lift, lock it into today's plan, and w
 
 ## Live Demo
 
-- **Live link:** https://assignment06-kqrtwd6yd-minhazify.vercel.app/
+- **Live link:** https://assignment06-six-iota.vercel.app/
 - **Repository:** https://github.com/Minhaz-ify/Assignment06
 ## Technologies Used
 
